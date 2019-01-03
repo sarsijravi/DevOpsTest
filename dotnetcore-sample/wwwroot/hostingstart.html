@@ -1,0 +1,631 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head><META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW"><meta http-equiv='Content-Type' content='text/html; charset=UTF-8'/>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9"><script type="text/javascript">window.NREUM||(NREUM={}),__nr_require=function(e,t,n){function r(n){if(!t[n]){var o=t[n]={exports:{}};e[n][0].call(o.exports,function(t){var o=e[n][1][t];return r(o||t)},o,o.exports)}return t[n].exports}if("function"==typeof __nr_require)return __nr_require;for(var o=0;o<n.length;o++)r(n[o]);return r}({1:[function(e,t,n){function r(){}function o(e,t,n){return function(){return i(e,[f.now()].concat(u(arguments)),t?null:this,n),t?void 0:this}}var i=e("handle"),a=e(2),u=e(3),c=e("ee").get("tracer"),f=e("loader"),s=NREUM;"undefined"==typeof window.newrelic&&(newrelic=s);var p=["setPageViewName","setCustomAttribute","setErrorHandler","finished","addToTrace","inlineHit","addRelease"],d="api-",l=d+"ixn-";a(p,function(e,t){s[t]=o(d+t,!0,"api")}),s.addPageAction=o(d+"addPageAction",!0),s.setCurrentRouteName=o(d+"routeName",!0),t.exports=newrelic,s.interaction=function(){return(new r).get()};var m=r.prototype={createTracer:function(e,t){var n={},r=this,o="function"==typeof t;return i(l+"tracer",[f.now(),e,n],r),function(){if(c.emit((o?"":"no-")+"fn-start",[f.now(),r,o],n),o)try{return t.apply(this,arguments)}catch(e){throw c.emit("fn-err",[arguments,this,e],n),e}finally{c.emit("fn-end",[f.now()],n)}}}};a("setName,setAttribute,save,ignore,onEnd,getContext,end,get".split(","),function(e,t){m[t]=o(l+t)}),newrelic.noticeError=function(e){"string"==typeof e&&(e=new Error(e)),i("err",[e,f.now()])}},{}],2:[function(e,t,n){function r(e,t){var n=[],r="",i=0;for(r in e)o.call(e,r)&&(n[i]=t(r,e[r]),i+=1);return n}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],3:[function(e,t,n){function r(e,t,n){t||(t=0),"undefined"==typeof n&&(n=e?e.length:0);for(var r=-1,o=n-t||0,i=Array(o<0?0:o);++r<o;)i[r]=e[t+r];return i}t.exports=r},{}],4:[function(e,t,n){t.exports={exists:"undefined"!=typeof window.performance&&window.performance.timing&&"undefined"!=typeof window.performance.timing.navigationStart}},{}],ee:[function(e,t,n){function r(){}function o(e){function t(e){return e&&e instanceof r?e:e?c(e,u,i):i()}function n(n,r,o,i){if(!d.aborted||i){e&&e(n,r,o);for(var a=t(o),u=m(n),c=u.length,f=0;f<c;f++)u[f].apply(a,r);var p=s[y[n]];return p&&p.push([b,n,r,a]),a}}function l(e,t){v[e]=m(e).concat(t)}function m(e){return v[e]||[]}function w(e){return p[e]=p[e]||o(n)}function g(e,t){f(e,function(e,n){t=t||"feature",y[n]=t,t in s||(s[t]=[])})}var v={},y={},b={on:l,emit:n,get:w,listeners:m,context:t,buffer:g,abort:a,aborted:!1};return b}function i(){return new r}function a(){(s.api||s.feature)&&(d.aborted=!0,s=d.backlog={})}var u="nr@context",c=e("gos"),f=e(2),s={},p={},d=t.exports=o();d.backlog=s},{}],gos:[function(e,t,n){function r(e,t,n){if(o.call(e,t))return e[t];var r=n();if(Object.defineProperty&&Object.keys)try{return Object.defineProperty(e,t,{value:r,writable:!0,enumerable:!1}),r}catch(i){}return e[t]=r,r}var o=Object.prototype.hasOwnProperty;t.exports=r},{}],handle:[function(e,t,n){function r(e,t,n,r){o.buffer([e],r),o.emit(e,t,n)}var o=e("ee").get("handle");t.exports=r,r.ee=o},{}],id:[function(e,t,n){function r(e){var t=typeof e;return!e||"object"!==t&&"function"!==t?-1:e===window?0:a(e,i,function(){return o++})}var o=1,i="nr@id",a=e("gos");t.exports=r},{}],loader:[function(e,t,n){function r(){if(!x++){var e=h.info=NREUM.info,t=d.getElementsByTagName("script")[0];if(setTimeout(s.abort,3e4),!(e&&e.licenseKey&&e.applicationID&&t))return s.abort();f(y,function(t,n){e[t]||(e[t]=n)}),c("mark",["onload",a()+h.offset],null,"api");var n=d.createElement("script");n.src="https://"+e.agent,t.parentNode.insertBefore(n,t)}}function o(){"complete"===d.readyState&&i()}function i(){c("mark",["domContent",a()+h.offset],null,"api")}function a(){return E.exists&&performance.now?Math.round(performance.now()):(u=Math.max((new Date).getTime(),u))-h.offset}var u=(new Date).getTime(),c=e("handle"),f=e(2),s=e("ee"),p=window,d=p.document,l="addEventListener",m="attachEvent",w=p.XMLHttpRequest,g=w&&w.prototype;NREUM.o={ST:setTimeout,SI:p.setImmediate,CT:clearTimeout,XHR:w,REQ:p.Request,EV:p.Event,PR:p.Promise,MO:p.MutationObserver};var v=""+location,y={beacon:"bam.nr-data.net",errorBeacon:"bam.nr-data.net",agent:"js-agent.newrelic.com/nr-1071.min.js"},b=w&&g&&g[l]&&!/CriOS/.test(navigator.userAgent),h=t.exports={offset:u,now:a,origin:v,features:{},xhrWrappable:b};e(1),d[l]?(d[l]("DOMContentLoaded",i,!1),p[l]("load",r,!1)):(d[m]("onreadystatechange",o),p[m]("onload",r)),c("mark",["firstbyte",u],null,"api");var x=0,E=e(4)},{}]},{},["loader"]);</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Azure Newsletter - Sep 10, 2018</title>
+
+<style type="text/css">
+        /* Begin Reset */
+        body { width:100% !important; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%; margin:0; padding:0; }
+        .ExternalClass { width:100%; }
+        .ExternalClass, .ExternalClass p, .ExternalClass span, .ExternalClass font, .ExternalClass a, .ExternalClass td, .ExternalClass div { line-height:100%; }
+        #backgroundTable, #footerTable { margin:0; padding:0; width:100% !important; line-height:100% !important; }
+        #outlook a { padding:0; }
+        /* End Reset */
+        table td { border-collapse:collapse; }
+        span.preheader { display: none !important; }
+        @-ms-viewport { width:device-width; }
+
+        /* Use element[class="className"] instead of .className */
+        @media only screen and (max-width: 480px) {
+            table[id="backgroundTable"] { padding:5px 0 !important; }
+            table[class="wrapper"] { width:320px !important; }
+            table[class="wrapper2"] { width:318px !important; }
+            td[class="wrapper2"] { width:318px !important; }
+            *[class*="paddingreset"] { padding:0 !important; }
+            *[class*="padding-half"] { padding:0.5em !important; }
+            *[class*="pad-half-top"] { padding-top:0.5em !important; }
+            *[class*="pad-half-right"] { padding-right:0.5em !important; }
+            *[class*="pad-half-bottom"] { padding-bottom:0.5em !important; }
+            *[class*="pad-half-left"] { padding-left:0.5em !important; }
+            /* Hide from mobile.*/
+            div[class="mobile-hidden"], table[class="mobile-hidden"], td[class="mobile-hidden"], br[class="mobile-hidden"] { display:none !important; }
+
+            /* Hide from desktop.
+            */
+            div[class="mobile-only"], div[class="mobile-only"] img, table [class="mobile-only"] { display:block !important; margin:0 !important; padding:0 !important; overflow:visible !important; float:none !important; width:auto !important; max-height:inherit !important; height:auto !important; position: relative
+                !important; top: 0px !important;}
+                td[class="mobile-only-blue"] { display:block !important; margin:0 !important; padding:0 !important; overflow:visible !important; width:15px !important; line-height:1px !important; background:#0078D7 !important; }
+                td[class="mobile-only-white"] { display:block !important; margin:0 !important; padding:0 !important; overflow:visible !important; width:15px !important; line-height:1px !important; background:#ffffff !important; }
+            /* Scale image or text.
+            */
+            img[class="photo"] { width:100% !important; height:auto !important; }
+            *[class*="text1"] { font-size:1em !important; line-height:1em !important; }
+            *[class*="text-75"] { font-size:0.75em !important; line-height:1.8em !important;  }
+            *[class*="text-half"] { font-size:0.5em !important; line-height:0.5em !important; }
+            /* Stack elements.
+            */
+            td[class="block"] { width:100% !important; display:block !important; }
+            span[class="block"] { display:block !important; }
+            td[class="reset"] { border:none !important; margin:0 !important; padding:0 !important; width:100% !important; }
+            /* Scale image or text.
+ Use this to add new classes to force specific image resizes for mobile view.
+ */
+ *[class*="w149h28"] { width:75px !important; height:14px !important; font-size:10px !important; line-height:10px !important; }
+ img[class="w206"] { width:103px !important; height:22px !important; }
+ td[class="w82"] { width:41px !important; height:22px !important; }
+ td[class="leftgutter"] { width:15px !important; }
+ td[class="MobileGutter"] { width:10px !important; }
+ td[class="MobileColorGutter"] { width:5px !important; }
+ td[class="MobileBody"] { width:290px !important; }
+ table[class="MobileBody"] { width:290px !important; }
+ td[class="rightgutter"] { width:15px !important; }
+ td[class="MobileEvent"] { width:48% !important; align: center !important;}
+ td[class="footerlogo"] { vertical-align: bottom !important; }
+ td[class="outsideBorder"] { width: 1px !important; background:#000000 !important; line-height:1px !important; }
+ td[class="mobile-border"] { border:none !important; }
+
+ td[class="Qblock"] { width:113px !important; display:block !important; }
+ td[class="Qblock2"] { width:85px !important; display:block !important; }
+ td[class="Qblock3"] { width:60px !important; display:block !important; }
+ td[class="Qspace"] { width:15px !important; }
+ td[class="purpleTitle"] { background:#5C2D91 !important; color: #ffffff !important; font-weight: 600 !important; padding:5px 0 !important;}
+ td[class="learnTitle"] { background:#107C10 !important; color: #ffffff !important; font-weight: 600 !important; padding:5px 0 !important;}
+ td[class="successTitle"] { background:#0078D7 !important; color: #ffffff !important; font-weight: 600 !important; padding:5px 0 !important;}
+ td[class="orangeTitle"] { background:#D83B01 !important; color: #ffffff !important; font-weight: 600 !important; padding:5px 0 !important;}
+ td[class="purpleTitle"] { width: 290px !important;}
+ td[class="learnTitle"] { width: 290px !important;}
+ td[class="successTitle"] { width: 290px !important;}
+ td[class="orangeTitle"] { width: 290px !important;}
+ td[class="TOCendSpace"] { display:block !important; margin:0 !important; padding:8px 0 !important; overflow:visible !important; width:auto !important; max-height:inherit !important; height:5px !important; background:#fffffe !important;}
+ td[class="purple"] { width:15px !important; background:#5C2D91 !important;}
+ td[class="green"] { width:15px !important; background:#107C10 !important;}
+ td[class="blue"] { width:15px !important; background:#0078D7 !important;}
+ td[class="orange"] { width:15px !important; background:#D83B01 !important;}
+ *[class*="whiteText"] {color: #ffffff !important; }
+ *[class*="BGpurple"] {background:#5C2D91 !important; }
+ *[class*="BGgreen"] {background:#107C10 !important; }
+ *[class*="BGblue"] {background:#0078D7 !important; }
+ *[class*="BGorange"] {background:#D83B01 !important; }
+ *[class*="BTTArrow"]{width:21px !important; height:20px !important;}
+ *[class*="MobileBracket"]{width:14px !important; height:21px !important;}
+ td[class="mobileShare"] {width: 290px;}
+
+}
+
+/* iPhone 4 regardless of IOS version */
+@media only screen and (device-height : 480px) and (device-width : 320px) and (device-aspect-ratio: 2/3) and (-webkit-min-device-pixel-ratio: 2) {
+   *[class*="ioshide"]{ display:none !important; }
+}
+/* iPhone 5 regardless of IOS version */
+@media only screen and (device-height : 568px) and (device-width : 320px) and (device-aspect-ratio: 40/71) and (-webkit-min-device-pixel-ratio: 2) {
+   *[class*="ioshide"]{ display:none !important; }
+}
+a:visited { color: #551A8B;!important } a:active { color: #551A8B;!important} @media only screen and (max-width: 480px) { .video {display:block !important; width:100% !important; height: auto !important;} .alignleft { text-align: left !important; } .mobileborder { display:block !important; border-top:0px !important; } .Qblock3 { width:80px !important; display:block !important; } td[class="Qblock3"] { width:80px !important; display:block !important; }}
+
+</style>
+</head>
+<body ><span class="mktEditable" id="AutoPreview" ><span class="preheader" style="display: none;">Learn about Azure, Windows, and Visual Studio at Microsoft Ignite.</span></span>
+<table border="0" cellpadding="0" cellspacing="0" align="center" bgcolor="#FFFFFF" ><tr ><td ><table border="0" cellpadding="0" cellspacing="0" width="698" align="center" class="wrapper" style="width:698px; " ><tr ><td style="width:0px; max-height:0px; overflow:hidden; font-size:0px; mso-line-height-rule:exactly; line-height:0px; mso-hide:all; display:none; " class="mobile-only" ><!-- ********************** Everything in this TD is to hide on Desktop version *************************** -->
+<div class="mktEditable" id="Mobile-Header" ></div>
+<!-- ******************* END Desktop hide TD ************************* --></td>
+</tr>
+<!-- /Mobile Success Stories -->
+<!-- END Mobile Extra sections -->
+<tr ><td ><!-- ************************  Start PC version of email *************************** -->
+<!-- Some tables or td's are hidden from mobile, but some are just mobile optimized  -->
+<!-- PREHEADER-->
+<table width="698" cellpadding="0" cellspacing="0" border="0" class="mobile-hidden" style="width:698px; " ><tr ><td width="698" align="right" style="width:698px; background-color:#ffffff; color:#3f4042; font-family:'Segoe UI',Arial,sans-serif; font-size:10px; font-weight:bold; padding:24px 0 3px; " ><span class="mktEditable" id="Preheader" ><span style="font-family: 'Segoe UI',Arial,sans-serif; font-weight: normal;">Having trouble viewing this email? <a title="View as a webpage" style="color: #3da5dd; text-decoration: none;" href=
+"file:///C:/Users/CG-Dell/Documents/Mailers/New.html" target="_blank"
+>View as a webpage</a>.</span></span>
+</td>
+</tr>
+</table>
+<!-- /PREHEADER --></td>
+</tr>
+<tr ><td ><table width="698" cellpadding="0" cellspacing="0" border="0" class="wrapper" style="width:698px; " ><tr ><td style="border:1px solid #000000; " class="mobile-border" ><!-- Start Regular email -->
+
+<table width="698" cellpadding="0" cellspacing="0" border="0" class="mobile-hidden" style="width:698px;">
+<tr>
+<td style="background:#ffffff;">
+<table width="673" cellpadding="0" cellspacing="0" border="0" style="width:673px;">
+<tr>
+<td style="font-size:1px; line-height:1px; mso-line-height-rule:exactly;" height="25">&nbsp;</td>
+</tr>
+<tr>
+<td width="40" style="background:#ffffff; width:40px; height: 70px;">&nbsp;</td>
+<td width="40" style="background:#ffffff; width:40px; height: 70px;"><a style="color: #326fb5; text-decoration: none;" target="_blank" title="Microsoft" href="mailto:contact@Cloudgarage.in"
+><img src="https://cgnewsletter.blob.core.windows.net/images/CG_MSFTBanner_800x125.png" width="698" height="90" border="0" align="left" style= "max-height: 90px;"  alt="Microsoft Azure"></a></td>
+<td width="698" style="width:698px; color: #326fb5; font-family: 'Segoe UI',Arial,sans-serif; font-size: 22px;" align="right" valign="middle"></td>
+</tr>
+</table>
+</td>
+<td width="25" style="width:25px; background:#ffffff;">&nbsp;</td>
+</tr>
+<tr>
+<td style="font-size:1px; line-height:1px; mso-line-height-rule:exactly;" height="25">&nbsp;</td>
+</tr>
+</table>
+<!-- Hero Banner -->
+<div class="mktEditable" id="Header" ><table cellpadding="0" cellspacing="0" border="0" bgcolor="#000000" class="wrapper">
+<tbody>
+<tr>
+<td style="background: #0078D4; line-height: 1px; padding: 0;"><img src="https://cgnewsletter.blob.core.windows.net/images/Banner2_New.png" width="710" border="0" alt="Azure" style="width: 710px;" class="photo" height="230" constrain="true"/></td>
+</tr>
+</tbody>
+</table></div>
+<!-- /Hero Banner -->
+<!-- Navigation Bar-->
+<table width="710" cellpadding="0" cellspacing="0" border="0" bgcolor="#0078D4" class="mobile-hidden" style="width:710px; " >
+<tr >
+<td width="710" align="left" valign="top" style="width:698px; color:#ffffff; font-family:'Segoe UI',Arial,sans-serif; font-size:13px; line-height:18px; font-weight:500; " ><div class="mktEditable" id="HeaderNavBar" ><table class="wrapper" width="698" cellpadding="0" cellspacing="0" border="0" bgcolor="#0078D4" style="width: 698px;">
+<tbody>
+<tr>
+<td width="50%" align="center" valign="middle" style="padding: 9px 0; background: #0078D4; color: #ffffff; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 18px; font-weight: bold;"><a href="#Featured" style="color: #fffffe; text-decoration: none;">Featured</a></td>
+<td width="50%" align="center" valign="middle" style="background: #0078d7; padding: 8px 0; color: #ffffff; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 18px; font-weight: bold; border-left: 1px solid #ffffff;"><a href="#BeInformed" style="color: #fffffe; text-decoration: none;">Be Informed</a></td>
+
+</tr>
+</tbody>
+</table></div>
+</td>
+</tr>
+</table>
+<!-- /Navigation Bar -->
+<!-- Mod-Featured -->
+<div class="mktEditable" id="Mod-Featured" ><table class="wrapper" style="width: 710px;" width="710" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+
+</tr>
+<tr>
+<td class="MobileGutter" style="background: #EBEBEB; line-height: 1px; width: 40px;" width="40">&nbsp;</td>
+<td class="MobileBody" style="width: 618px; background: #EBEBEB;" width="618" bgcolor="#EBEBEB">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table style="background: #EBEBEB;" align="center" border="0" cellspacing="0" cellpadding="0" bgcolor="#EBEBEB">
+<tbody>
+<tr>
+<td class="block" style="font-family: 'Segoe UI', 'Segoe UI Regular',Tahoma, Geneva, Verdana, sans-serif; font-size: 16px; line-height: 22px; mso-line-height-rule: exactly; color: #0072c6; width: 370px;" width="370" bgcolor="#EBEBEB" align="left" valign="middle">
+<a style="color: #0072c6; text-decoration: none;" target="_blank" title="Accelerate your cloud transformation with CSP" href="mailto:contact@Cloudgarage.in"
+>Accelerate your cloud transformation with CSP Offerings</a>.</td>
+<td class="mobile-hidden" style="width: 30px; background: #EBEBEB; line-height: 1px;" width="30">&nbsp;</td>
+<td class="block" style="font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; line-height: 20px; font-weight: 500; color: #ffffff; background: #EBEBEB;" bgcolor="#EBEBEB" align="left"><!--[if !mso]><!-->
+<div class="mobile-only" style="display: none; float: left; overflow: hidden; width: 0; max-height: 0; line-height: 0;">
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!--<![endif]-->
+<table style="width: 200px;" border="0" cellspacing="0" cellpadding="0" width="200">
+<tbody>
+<tr>
+<td class="alignleft" style="width: 200px; height: 33px;" width="200" height="33" align="right">
+<table style="background: #ffffff; border: 1px solid #0072c6;" border="0" cellspacing="0" cellpadding="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="padding: 2px 0px; background: #ffffff; line-height: 1px; mso-line-height-rule: exactly;" colspan="3" width="1">&nbsp;</td>
+</tr>
+<tr>
+<td width="25" bgcolor="#ffffff">&nbsp;</td>
+<td style="color: #0072c6; max-width: 25px; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" align="left" valign="middle" bgcolor="#ffffff"><a style="color: #0072c6; text-decoration: none;" title="Take the survey" target="_blank" href="mailto:contact@Cloudgarage.in"
+>Connect with us</a></td>
+<td width="25" bgcolor="#ffffff">&nbsp;</td>
+</tr>
+<tr>
+<td style="padding: 2px 0; background: #ffffff; line-height: 1px; mso-line-height-rule: exactly;" colspan="3" width="1">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table border="0" cellspacing="0" cellpadding="0" width="100%" style="width: 100%;">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="MobileGutter" style="background: #EBEBEB; line-height: 1px; width: 20px;" width="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- <table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+	<tbody>
+		<tr>
+			<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 40px;" width="40">&nbsp;</td>
+			<td style="padding: 20px 0 0 0; background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px; width: 618px;" width="618" valign="top" align="left">Search by keyword or sort articles by categories via the <a style="text-decoration: none; color: #28a8e0;" href=
+"http://emails.microsoft.com/ol/j0pTccXKK1xQsRp74v-LLbrimSHEf5Wptbh-DPny190c3Fx_cfncLAy82YMIS8R_KKTKUlRERcQs0B5XHq3YMdEQqaAOXRX0VSj4iaWHP8tKeLAujIdy8fX1nmUMroCRk07fAEVAS2J-RAmIfbMvizapM58uGRaO_iaYZNR6xXlbw74M05GgTqa5piH5pRGVv2HIMUlp9sDGrBr6/jEFRdcfML1lNoVdlsbPWK6frkHvNc5u6tK9yD-Oo0cAzlmtRP83VLVPquP9wKN8cUsWqM082KsE4jVR5D-eAb5QN1PBKGE23TC_6kuz_QbJiQfp7yMxtoKWuzF8Rpdbfl0XmGWYET3hYaDS3RIksvA7qIKoVeSXTzXDFGoYqtTshi4wN-ZuCa4ec3WGRw3LQ2AOgBFJ3xu22zWXvOKFIo9NQlWwWuGk0VrDMtgDw--wSpCprwthVmi5Y7qxzFs1c2ia7chXpxtr5asF5RpODiOPHiessWiwUio42Y0KCLQiyFp60VDhb5CCrxwcNYSt-JypeMMAInhuom01zct48dyGutiMV43s04aVj6b3dlye8O17MERWvtBH5mheRM6sq-FOoie4TvAHmYTq9_b5KSUCSGs7wlGyER7XBkEBmVstLD9QmHoOY5dCayPwG9SaNBnO-nQ,," target="_blank" title="website version"
+>website version</a>.</td>
+			<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 40px;" width="40">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> -->
+<table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; width: 1px; height: 20px;" colspan="3" width="1" height="20">&nbsp;</td>
+</tr>
+<tr>
+<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 40px;" width="40">&nbsp;</td>
+<td class="MobileBody" style="background: #ffffff; padding: 0px 0px 0px 0px; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px; width: 618px;" width="618" valign="top" align="left"><!-- Featured Section Title -->
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="padding-left: 35px; background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-weight: 500; font-size: 26px; line-height: 36px;" valign="top" align="left">
+<a name="Featured" style="color: #1a1a1a;"></a>Featured</td>
+</tr>
+</tbody>
+</table>
+<!-- ******************** Add as many Featured articles as needed here ******************** --> <!-- Featured Section 00 --> <!-- Featured Section 01 -->
+<table class="Featured" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="max-width:650px">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 30px;" width="1%" height="20">&nbsp;</td>
+</tr>
+<tr><!-- Title-->
+<td style="color: #1a1a1a; padding-left: 35; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500;" valign="top" align="left">CloudGarage BaaS 2018: Are you worried about your data loss?</td>
+</tr>
+<tr><!-- Body -->
+<td style="color: #1a1a1a; padding-left: 55px; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px; font-weight: normal;" valign="top" align="center"><p>Stop worrying about your precious data and applications, cloud garage team is ready to deliver the best backup model and provide you backup based service on azure. <a href=
+"http://www.cloudgarage.in/cloud-services/backup/" target="_blank" title="Learn more" id="" style="text-decoration: none; color: #1b348e;"
+>Learn more</a>.</p><br> <a href="mailto:contact@Cloudgarage" target="_blank" title="connect with us"><img src="https://cgnewsletter.blob.core.windows.net/images/FRP_Final.png" width="590" height= "220" class="photo" style= "max-height: 220px; max-width :590px; margin-left: 100px;" alt="Learn more"></a></td>
+</tr>
+</tbody>
+</table>
+
+<div class="mktEditable" id="MOD-BeInformed" ><!-- BeInformed Section Title-->
+<table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td class="MobileColorGutter" style="width: 15px; border-top: 1px solid #cccccc; line-height: 1px;" width="15">&nbsp;</td>
+<td style="border-top: 1px solid #cccccc; background: #ffffff; line-height: 1px;">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td class="MobileColorGutter" style="width: 15px; line-height: 1px;" width="15">&nbsp;</td>
+<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 25px;" width="25">&nbsp;</td>
+<td class="MobileBody" style="background: #ffffff; padding: 0px 0px 0px 0px; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px; width: 618px;" width="618" valign="top" align="left">
+
+<table class="wrapper" style="width: 618px;" width="618" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td style="background: #ffffff; padding: 10px 0px; color: #1a1a1a; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-weight: 500; font-size: 26px; line-height: 36px;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed"></a>Be Informed</td>
+</tr>
+</tbody>
+</table>
+</td>
+<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 40px;" width="40">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!--Grey Section1 background --> <!--<table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0" bgcolor="#cccccc">
+	<tbody>
+		<tr>
+			<td class="MobileColorGutter" style="line-height: 1px; width: 15px;" width="15">&nbsp;</td>
+			<td class="MobileGutter" style="background: #EBEBEB; line-height: 1px;" width="25">&nbsp;</td>
+			<td class="MobileBody" style="background: #EBEBEB; padding: 0px 0px 0px 0px; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" width="618" valign="top" align="left">
+			<!-- SECTION 1 with BG Color 
+
+<table class="wrapper" style="width: 618px;" width="618" cellspacing="0" cellpadding="0" border="0" bgcolor="#EBEBEB">
+					<tbody>
+						<tr>
+							<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+				<table cellspacing="0" cellpadding="0" border="0" bgcolor="#EBEBEB">
+					<tbody>
+						<tr>
+							<td style="background: #EBEBEB; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; outline: none; text-decoration: none;" valign="top" align="left">
+								<table cellspacing="0" cellpadding="0" border="0" bgcolor="#EBEBEB">
+									<tbody>
+										<tr>
+											<td style="color: #1a1a1a; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed1"></a>a</td>
+										</tr>
+									</tbody>
+								</table>
+								<table cellspacing="0" cellpadding="0" border="0" bgcolor="#EBEBEB">
+									<tbody>
+										<tr>
+											<td style="color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left">d</td>
+										</tr>
+									</tbody>
+								</table>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+				<table class="wrapper" style="width: 618px;" width="618" cellspacing="0" cellpadding="0" border="0" bgcolor="#EBEBEB">
+					<tbody>
+						<tr>
+							<td style="background: #EBEBEB; font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 10px;" height="10">&nbsp;</td>
+						</tr>
+					</tbody>
+				</table>
+			</td>
+			<td class="MobileGutter" style="background: #EBEBEB; line-height: 1px;" width="40">&nbsp;</td>
+		</tr>
+	</tbody>
+</table> -->
+<table class="wrapper" style="width: 698px;" width="698" cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td class="MobileColorGutter" style="width: 15px; line-height: 1px;" width="15">&nbsp;</td>
+<td class="MobileGutter" style="background: #ffffff; line-height: 1px; width: 25px;" width="25">&nbsp;</td>
+<td class="MobileBody" style="background: #ffffff; padding: 0px 0px 0px 0px; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px; width: 618px;" width="618" valign="top" align="left">
+<table class="wrapper" style="width: 618px;" width="618" cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; outline: none; text-decoration: none;" valign="top" align="left">
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed1"></a>Azure zone-redundant snapshots for managed disks</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="max-width:650px;">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left"> Azure IoT Hub helps to control and manage billions of devices, send data to the cloud and gain business insights. IoT Hub integration with Azure Event Grid making it even easier to transform these insights into actions by simplifying the architecture of IoT solutions... <a 
+href="https://azure.microsoft.com/en-us/blog/announcing-general-availability-of-azure-iot-hub-s-integration-with-azure-event-grid/" target="_blank" title="Learn more, and then get started" style="text-decoration: none; color: #1b348e;"
+>Learn more, and then get started</a>.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<table class="wrapper" style="width: 618px;" width="618" cellspacing="0" cellpadding="0" border="0" bgcolor="#FFFFFF">
+<tbody>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; height: 20px;" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION 5 -->
+
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; outline: none; text-decoration: none;" valign="top" align="left">
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed1"></a>Backup your applications on Azure Stack with Azure Backup</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="max-width:650px;">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left"> Microsoft Azure Backup Server allow you to backup files and applications data. Azure Stack tenants can now take app consistent backup of their data in Azure Stack VMs, store them on the stack for operational recoveries, and send the data to Azure for long-term retention and offsite copy needs. 
+												Moreover, Azure backup protects your data from malicious attacks and helps you recover by the three-pronged strategy of Prevention, Alerting, and Recovery...
+                                            
+											<a href="https://azure.microsoft.com/en-in/blog/backup-your-applications-on-azure-stack-with-azure-backup/" target="_blank" title="Learn more, and then get started" style="text-decoration: none; color: #1b348e;"
+>Learn more, and then get started</a>.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; width: 1%; height: 20px;" width="1%" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION 6 -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="background: #ffffff; color: #1a1a1a; font-family: 'Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; outline: none; text-decoration: none;" valign="top" align="left">
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; padding-left: 30px; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed1"></a>Azure Backup for SQL Server on Azure VMs</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" bgcolor="#ffffff" style="max-width:685px;">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; padding-left:30px; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left"> Now with Microsoft Azure, backup and restore options are available for SQL Server running in Windows Azure Virtual Machines. Azure Storage maintains three copies of every Azure VM disk to guarantee protection against data loss or physical data corruption. 
+Thus, unlike on-premises, you don't need to focus on hardware failures. However, you should still backup your SQL Server databases to protect against application or user errors, such as inadvertent data insertions or deletions. 
+In this situation, it is important to be able to restore to a specific point in time.                                            
+		<a href="https://docs.microsoft.com/en-us/azure/virtual-machines/windows/sql/virtual-machines-windows-sql-backup-recovery" target="_blank" title="Learn more, and then get started" style="text-decoration: none; color: #1b348e;">Learn more</a>.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; width: 1%; height: 20px;" width="1%" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!-- SECTION 7 -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; padding-left: 30px; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed2"></a> SAP connector in Azure Logic Apps in preview</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" style="max-width:685px;">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; padding-left: 30px; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left">If you use SAP ERP Central Component or SAP S/4HANA, take advantage of the Azure Logic Apps SAP connector (preview) to send business transactions and connectivity to an on-premises SAP via an on-premises data gateway. When the connector is generally available, you'll also be able to receive business transactions from SAP via Logic Apps, and then generate and store schemas for messages to send or receive to/from SAP. <a href=
+"http://emails.microsoft.com/ol/j0pTccLOK1xQsRp74v-LLbrimSHEf5Wptbh-DPny190c3Fx_cfncLAy82YMIS8R_KKTKUlRERcQs0B5XHq3YMdEQqaAOXRX0VSj4iaWHP8tKeLAujIdy8fX1nmUMroCRk07fAEVAS2J-RAmIfbMvizapM58uGRaO_iaYZNR6xXlbw74M05GgTqa5piDzrROXumbIMUlp9sDGrBr6/jUtZd8XJKFlNoVdlsbPWJqbujHvNc5u6tK9yD-Oo0cAzlk1wP_ncd0D1ncFUU549YuCdTAMAA4MuzANfE-PYfZBQ6bhIGEi8X3bsgbGXbIJAf7FwyM5zoL-xlm0GldSGz13WHF0LQnZTQSi8c6oygRPiJ4MvWheT_2n-FJIkiTscw7APwq2_crjp_mqK5W3M4zy6OGNXyfeX0m-xHKNcvfFViEogx1EvVPPf7QTO7bUMvxIT0_5Guyp5wspcEMpiwj-keR2w0Lfad-w_aJiAwNvgl60TOisAstUZdmKBHm-RGLivYXJwxxe4rAAKHQpkBGVbLMY5lja0pXpvQv0LcxKXmSI73ENy0ftYx53UnDW7fUvNbhLL8QC7yhWkEK4kzn-_vekJ4B_lAAL00eVVdlG0Ovvlm3qVYJjg6GcSYMkYSMFAe66h09SV_vMGtRTnb2ullMnCHE0FK6AwsOuyoM6KqfG6mmiGl3tr1zlhEwhzyA_ucpK1QiB-wrmuwA,," target="_blank" title="Learn how to use the SAP connector" style="text-decoration: none; color: #1b348e;"
+>Learn how to use the SAP connector</a>.</td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; width: 1%; height: 20px;" width="1%" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+
+<!-- SECTION 9 -->
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td style="color: #1a1a1a; padding-left: 30px; font-family: 'Segoe UI Semibold','Segoe UI',Arial,sans-serif; font-size: 18px; line-height: 24px; font-weight: 500; outline: none; text-decoration: none;" valign="top" align="left"><a style="color: #1a1a1a;" name="BeInformed2"></a> Cross-subscription disaster recovery for Azure virtual machines</td>
+</tr>
+</tbody>
+</table>
+<table cellspacing="0" cellpadding="0" border="0" style="max-width:600px;" >
+<tbody>
+<tr >
+<td  style="color: #1a1a1a; padding-left: 30px; text-align:justify; font-family: 'Segoe UI',Arial,sans-serif; font-size: 13px; line-height: 20px;" valign="top" align="left">
+<p>Microsoft has announced cross-subscription disaster recovery (DR) support for Azure virtual machines using Azure Site Recovery (ASR). You can now configure DR for Azure IaaS applications to a different subscription with in the same Azure Active Directory tenant......
+<a href="https://azure.microsoft.com/en-us/blog/cross-subscription-dr/" target="_blank" title="Learn more, and then get started" id="" style="text-decoration: none; color: #1b348e;"
+>Learn more, and then get started</a>.<br /><br /></p>
+<table cellspacing="0" cellpadding="0" border="0">
+<tbody>
+<tr>
+<td width="650" style="border: 1px solid #cccccc; width: 650px;">
+<a href="http://www.cloudgarage.in/cloud-services/disaster-recovery/" target="_blank" title="Connect with us"><img src="https://cgnewsletter.blob.core.windows.net/images/disaster-recovery.jpg" width="650" height="200" style="max-width: 650px; max-height: 200px;" alt="Learn more, and then get started" /></a></td>
+</tr>
+</tbody>
+</table></td>
+</tr>
+<tr>
+<td style="font-size: 1px; line-height: 1px; mso-line-height-rule: exactly; width: 1%; height: 20px;" width="1%" height="20">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+                    </td>
+                </tr>
+                
+   
+
+                
+   
+  <tr width="800" style="max-width:800px;">
+        <td align="center" width="800px" height="250" valign="center" bgcolor="#f6f6f6" style=" max-width: 800px; max-height: 250px;">
+   
+
+
+
+<!--[if (gte mso 9)|(IE)]>
+            <table align="center" border="0" cellspacing="0" cellpadding="0" width="800" height="200" style="max-width:800px; max-height: 200px;">
+            <tr>
+            <td align="center" valign="top" width="800" height="200" style="max-width:800px; max-height: 200px;"> 
+            <![endif]-->
+            <table width="800" bgcolor="#002032" height="180" align="center" border="0" cellpadding="0" cellspacing="0" style="max-width:800px; max-height: 180px;">
+                <tr width="800px" height="200" style=" max-height: 200px; max-width: 800px;">
+                   <td width="200" height="175" bgcolor="#002032" style=" max-width: 175px;  padding-left: 20px;">
+				   
+                    <img src="https://cgnewsletter.blob.core.windows.net/images/CloudGarage-Logo-White-1024x424.png" border="0" width="170" height="75" style=" max-width: 175px; padding-left: 20px; max-height: 75px;">
+					
+					<td bgcolor="#002032" width="130" height="50" valign="left" style="align-self: leftwards; max-height: 50px; max-width: 130px; ">
+					
+                	       <td bgcolor="#002032" width="130" height="53" style="align-content: center; max-height: 53px; max-width: 130px;">
+						   <a href="https://www.facebook.com/cloudgarage.in/"><img  src="https://cgnewsletter.blob.core.windows.net/images/Facebook_512.png" width="40" height="35" style=" max-width: 40px; margin-right: 38px;  max-height: 35px;"></a>
+                		
+                	         </td>
+                	       <td bgcolor="#002032" width="125" height="50" style="align-content: center; max-height: 90px; max-width: 125px;">
+                	          <a href="https://www.linkedin.com/in/cloudgarage-in-62860712a"><img  src="https://cgnewsletter.blob.core.windows.net/images/LinkedIn_512.png" border="0" width="45"  height="40" style=" max-width: 45px; margin-right: 25px; max-height: 40px;"></a>
+                		
+                	         </td>
+                	       <td bgcolor="#002032" height="75" width="145" style=" max-height: 75px; max-width: 145px;">
+                	           <a href="https://twitter.com/CloudGarage_IN"><img src="https://cgnewsletter.blob.core.windows.net/images/Twitter_512.png" border="0" width="35"  height="35" style=" max-width: 35px; margin-left: 30px; max-height: 35px;"></a>
+                		
+                	         </td>
+	
+                   
+                   </td>
+				   
+				             
+                    <td bgcolor="#002032" width="275" height="200" align="left"  style="padding: 5x 20px 10px 45px; font-family: Open Sans, Verdana, Helvetica, Arial, sans-serif; color: #D3D3D3; max-height: 200; max-width: 275px;">
+                       <p><b>Headquarters :</b></p>
+                        <p style="font-size: 12px; line-height: 14px; vertical-align: top-padding: 0px 0px 0px 10px;">
+
+                         #796, Saraswati Vihar,<br> Off M.G. Road<br>
+                          Gurugram, Haryana, India<br>
+                          Pincode: 122002<br>
+                          Ph: +91-124 4036330<br>
+                         </p>
+                        <p><b>Branches :</b></p>
+                        <p style="font-size: 12px;">
+                        Mumbai, Bangalore, Kolkata, Pune
+                        </p>
+                        
+                    </td>
+                    <td bgcolor="#002032" height="200" width="300" style="padding: 5px 5px 5px 15px;" align="left">
+                      <p>
+                      
+<a href="http://www.cloudgarage.in/about-us/" style="color: #D3D3D3;  font-size: 14px; line-height: 8px; text-decoration: none;" target="_blank">About Us<br></a>
+                         
+                          <a href="http://www.cloudgarage.in/#services" style="color: #D3D3D3;  font-size: 14px; line-height: 9px; text-decoration: none;" target="_blank">Our Services<br></a>
+                            <a href="http://www.cloudgarage.in/contact/" style="color: #D3D3D3;  font-size: 14px; line-height: 9px; text-decoration: none;" target="_blank">Contact<br><br></a>
+                        
+                          <a href="mailto:contact@cloudgarage.in?subject=Azure%20Discussion" style="color: #D3D3D3;  font-size: 14px; line-height: 8px; text-decoration: none;" target="_blank">Talk to Cloud specialist<br></a>
+                        <a href="mailto:contact@cloudgarage.in?subject=Azure%20Discussion" style="color: #D3D3D3;  font-size: 14px; line-height: 8px; text-decoration: none;" target="_blank">Free Security  check<br></a>
+                         <a href="mailto:contact@cloudgarage.in?subject=Azure%20Discussion" style="color: #D3D3D3;  font-size: 14px; line-height: 8px; text-decoration: none;" target="_blank">Schedule a Workshop<br></a>
+                         <a href="mailto:contact@cloudgarage.in?subject=Azure%20Discussion" style="color: #D3D3D3;  font-size: 14px; line-height: 8px; text-decoration: none;" target="_blank">Have questions?<br></a>
+						 
+						         </p>
+                      
+                    </td>
+                      
+                    
+                         
+                </tr>
+                 
+                	
+                
+             </table>
+            <!--[if (gte mso 9)|(IE)]>
+            </td>
+            </tr>
+            </table>
+            <![endif]-->
+        </td>
+    </tr>
+    
+</table>
+</body>
+</html>
+
+
+
